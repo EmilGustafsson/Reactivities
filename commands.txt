@@ -1,0 +1,8 @@
+ctrl-.
+ctrl-shift-.
+
+PS C:\Users\emil\source\repos\Reactivities> cd .\API\
+PS C:\Users\emil\source\repos\Reactivities\API> dotnet watch run
+
+0122a508-889f-4b09-94cd-cad0575caccf
+
