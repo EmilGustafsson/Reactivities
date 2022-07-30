@@ -1,8 +1,26 @@
+.net sdk
+node js
+
+Visual studio code
+Extension
+C#
+C# Extension - JosKreativ
+NuGet Gallery
+SQLite
+
+Browser:
+React Developer Tools
+
 ctrl-.
 ctrl-shift-.
+ctrl-shift-p
 
 PS C:\Users\emil\source\repos\Reactivities> cd .\API\
 PS C:\Users\emil\source\repos\Reactivities\API> dotnet watch run
+
+npx create-react-app client-app --use-npm --template typescript
+npm start
+
 
 0122a508-889f-4b09-94cd-cad0575caccf
 
