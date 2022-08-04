@@ -24,3 +24,4 @@ npm start
 
 0122a508-889f-4b09-94cd-cad0575caccf
 
+dotnet ef database drop -s API -p Persistence
