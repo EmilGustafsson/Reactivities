@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import { history } from '../..';
 import { Activity } from '../models/activity';
 import { ServerError } from '../models/serverError';
+import { User, UserFormValues } from '../models/user';
 import { store } from '../stores/store';
 
 const sleep = (delay: number) => {
@@ -16,6 +17,16 @@ interface IData {
 }
 
 axios.defaults.baseURL = 'http://localhost:5000/api';
+
+axios.interceptors.request.use(config => {
+    const token = store.commonStore.token;
+    if (token) { 
+        var h = config?.headers;
+        if (h !== undefined)
+            h.Authorization = `Bearer ${token}`;
+    }
+    return config;
+})
 
 axios.interceptors.response.use(async response => {
     await sleep(1000);
@@ -96,8 +107,15 @@ const Activities = {
     delete: (id: string) => axios.delete<void>(`/activities/${id}`)
 }
 
+const Account = {
+    current: () => requests.get<User>('/account'),
+    login: (user: UserFormValues) => requests.post<User>('account/login', user),
+    register: (user: UserFormValues) => requests.post<User>('account/register', user)
+}
+
 const agent = {
-    Activities
+    Activities,
+    Account
 }
 
 export default agent;
