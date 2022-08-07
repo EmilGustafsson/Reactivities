@@ -30,17 +30,18 @@ axios.interceptors.request.use(config => {
 
 axios.interceptors.response.use(async response => {
     await sleep(1000);
+    console.log(response);
     return response;
 }, (error: AxiosError) => {
     const {data, status, config} = error.response!;
     const dataobj: IData = data as IData;
-    //console.log(error.response);
+    console.log(error.response);
     switch (status) {
         case 400:
             //toast.error('bad request');
-            //console.log(data);
-            //console.log(status);
-            //console.log(dataobj.errors);
+            console.log(data);
+            console.log(status);
+            console.log(dataobj.errors);
             if (typeof data === 'string') {
                 toast.error(data);
             }

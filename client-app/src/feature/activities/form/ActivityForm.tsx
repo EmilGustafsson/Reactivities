@@ -56,7 +56,6 @@ export default observer( function ActivityForm() {
         } else {
             updateActivity(activity).then(() => history.push(`/activities/${activity.id}`))
         }
-        activity.id.length ? updateActivity(activity) : createActivity(activity);
     }
 
     if (loadingInitial) return <LoadingComponent content='Loading activity...'/>
@@ -81,7 +80,7 @@ export default observer( function ActivityForm() {
                             timeFormat='HH:mm'
                             dateFormat='yyyy/MM/dd HH:mm'
                             />
-                        <Header content='Location details' su color='teal' />
+                        <Header content='Location details' sub color='teal' />
                         <MyTextInput placeholder='City' name='city'/>
                         <MyTextInput placeholder='Venue' name='venue'/>
                         <Button 

@@ -16,6 +16,7 @@ namespace API
 {
     public class Program
     {
+        public static ILogger<Program> Logger { get; set; }
         public static async Task Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
@@ -31,6 +32,7 @@ namespace API
             catch (Exception ex)
             {
                 var logger = services.GetRequiredService<ILogger<Program>>();
+                Logger = logger;
                 logger.LogError(ex, "An error occured during migration");
             }
             await host.RunAsync();
