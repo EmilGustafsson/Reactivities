@@ -15,8 +15,8 @@ ctrl-.
 ctrl-shift-.
 ctrl-shift-p
 
-PS C:\Users\emil\source\repos\Reactivities> cd .\API\
-PS C:\Users\emil\source\repos\Reactivities\API> dotnet watch run
+cd .\API\
+dotnet watch run
 
 npx create-react-app client-app --use-npm --template typescript
 npm start
@@ -25,3 +25,5 @@ npm start
 0122a508-889f-4b09-94cd-cad0575caccf
 
 dotnet ef database drop -s API -p Persistence
+
+ dotnet restore
