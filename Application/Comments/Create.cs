@@ -53,6 +53,7 @@ namespace Application.Comments
                     Activity = activity,
                     Body = request.Body
                 };
+                activity.Comments.Add(comment);
                 var val = await _context.SaveChangesAsync();
                 var success = val > 0;
                 if (success) return Result<CommentDto>.Success(_mapper.Map<CommentDto>(comment));
